@@ -9,7 +9,7 @@ window.onload = function () {
   var chosenCategory;     // Selected catagory
   var word ;              // Slected random word from categories
   var guess ;             // Geuss
-  var geusses = [ ];      // Empty array of stored geusses
+  var geusses = [ ];      // Empty array to store player geusses
   var lives ;             // Lives
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
@@ -20,9 +20,9 @@ window.onload = function () {
 
 
 
-  // create alphabet buttons ul
+  //Function creates alphabet buttons ul
   var buttons = function () {
-    buttons = document.getElementById('buttons');
+    gameButtons = document.getElementById('buttons'); //Grab div id="buttons"
     letters = document.createElement('ul');
 
     for (var i = 0; i < alphabet.length; i++) {
@@ -31,7 +31,7 @@ window.onload = function () {
       list.id = 'letter';
       list.innerHTML = alphabet[i];
       check();
-      buttons.appendChild(letters);
+      gameButtons.appendChild(letters);
       letters.appendChild(list);
     }
   }
@@ -70,17 +70,31 @@ window.onload = function () {
     }
   }
 
+  //Arrays of win/lose/half-lives comments
+  var winQuotes = ["The Force is Strong With You!", "Impressive. Most Impressive. Obi-Wan has Taught You Well"];
+  var winComment = winQuotes[Math.floor(Math.random() * winQuotes.length)];
+
+  var loseQuotes = ["I Find Your Lack of Faith Disturbing", "Rebel Scum!", "A Jedi You are Not"]
+  var loseComment = loseQuotes[Math.floor(Math.random() * loseQuotes.length)];
+
+  var halfQuotes = ["Do or Do Not. There is No Try", "Use the Force", "Patience Young Padawan", "Never Tell Me the Odds"]
+  var halfComment = halfQuotes[Math.floor(Math.random() * halfQuotes.length)];
+
   //Player lives
    comments = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     //Lose
     if (lives === 0) {  //could also do (lives < 1)
-      showLives.innerHTML = "Game Over";
+      showLives.innerHTML = loseComment;
+    }
+    //Half of lives
+    if (lives === 5) {
+      showLives.innerHTML = halfComment;
     }
     //Win
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) { //accounts for space in word
-        showLives.innerHTML = "You Win!";
+        showLives.innerHTML = winComment;
       }
     }
   }
@@ -120,8 +134,8 @@ window.onload = function () {
  /*[2]*/["death-star", "executor", "millennium-falcon"], //Star Wars ships
     ];
 
-    chosenCategory = categories[Math.floor(Math.random() * categories.length)];
-    word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
+    chosenCategory = categories[Math.floor(Math.random() * categories.length)]; //Choose random catagory array
+    word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)]; //Choose random word from chosenCategory array
     word = word.replace(/\s/g, " ");
     console.log(word);
     buttons();
