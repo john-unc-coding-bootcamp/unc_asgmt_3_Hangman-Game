@@ -71,17 +71,27 @@ window.onload = function () {
   }
 
   //Arrays of win/lose/half-lives comments
-  var winQuotes = ["The Force is Strong With You!", "Impressive. Most Impressive. Obi-Wan has Taught You Well"];
+  /*var winQuotes = ["The Force is Strong With You!", "Impressive. Most Impressive. Obi-Wan has Taught You Well"];
   var winComment = winQuotes[Math.floor(Math.random() * winQuotes.length)];
 
   var loseQuotes = ["I Find Your Lack of Faith Disturbing", "Rebel Scum!", "A Jedi You are Not"]
   var loseComment = loseQuotes[Math.floor(Math.random() * loseQuotes.length)];
 
   var halfQuotes = ["Do or Do Not. There is No Try", "Use the Force", "Patience Young Padawan", "Never Tell Me the Odds"]
-  var halfComment = halfQuotes[Math.floor(Math.random() * halfQuotes.length)];
+  var halfComment = halfQuotes[Math.floor(Math.random() * halfQuotes.length)];*/
 
   //Player lives
    comments = function () {
+
+     var winQuotes = ["The Force is Strong With You!", "Impressive. Most Impressive. Obi-Wan has Taught You Well"];
+     var winComment = winQuotes[Math.floor(Math.random() * winQuotes.length)];
+
+     var loseQuotes = ["I Find Your Lack of Faith Disturbing", "Rebel Scum!", "A Jedi You are Not"]
+     var loseComment = loseQuotes[Math.floor(Math.random() * loseQuotes.length)];
+
+     var halfQuotes = ["Do or Do Not. There is No Try", "Use the Force", "Patience Young Padawan", "Never Tell Me the Odds"]
+     var halfComment = halfQuotes[Math.floor(Math.random() * halfQuotes.length)];
+
     showLives.innerHTML = "You have " + lives + " lives";
     //Lose
     if (lives === 0) {  //could also do (lives < 1)
@@ -157,6 +167,7 @@ window.onload = function () {
    document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
+    comments();
     play();
   }
 }
