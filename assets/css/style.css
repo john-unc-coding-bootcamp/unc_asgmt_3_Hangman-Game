@@ -55,12 +55,19 @@ p {
   cursor: pointer;
   border: solid 1px yellow;
   border-radius: 5px;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
 }
 
 #alphabet li:hover {
   background: black;
   color: yellow;
   border: solid 1px yellow;
+  -moz-transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
 }
 
 #hold {
@@ -100,10 +107,17 @@ button {
   border: solid 1px yellow;
   border-radius: 5px;
   outline: none;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
 }
 
 button:hover {
   font-family: 'Exo', sans-serif;
   background: black;
   color: yellow;
+  -moz-transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
 }
