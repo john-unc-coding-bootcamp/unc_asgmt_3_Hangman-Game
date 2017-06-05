@@ -62,7 +62,7 @@ window.onload = function () { //Will run once window is loaded
       guess = document.createElement('li'); //Create li element
       guess.setAttribute('class', 'guess'); //Give li id="guess"
       if (word[i] === "-") {
-        guess.innerHTML = " "; //If the [i] in the word is "-"(space) then enter space into hmtl or else its "_"
+        guess.innerHTML = "-"; //If the [i] in the word is "-"(space) then enter space into hmtl or else its "_"
         space = 1; //Assigns value of 1 to var space
       } else {
         guess.innerHTML = "_";
@@ -150,7 +150,7 @@ window.onload = function () { //Will run once window is loaded
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)]; //Choose random catagory array
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)]; //Choose random word from chosenCategory array
-    word = word.replace(/\s/g, " ");
+    word = word.replace(/\s/g, "-");
     console.log(word);
     //buttons();
 

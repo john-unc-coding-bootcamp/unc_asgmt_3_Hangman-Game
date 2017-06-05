@@ -1,0 +1,39 @@
+body {
+  background: white;
+  color: black;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 18px;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+li {
+  text-transform: uppercase;
+  text-align: center;
+  list-style: none;
+  display: inline-block;
+  letter-spacing: 15px;
+}
+
+h1, h2, h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: table;
+  clear: both;
+}
+
+#chosen-word {
+  text-align: center;
+  padding: 0;
+}
