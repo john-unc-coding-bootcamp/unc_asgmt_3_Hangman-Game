@@ -53,12 +53,12 @@ window.onload = function () { //Will run once window is loaded
   }
 
   // Create geusses ul
-   result = function () {
+   chosenWord = function () {
     wordHolder = document.getElementById('hold'); //Grabs div id="hold"
     correct = document.createElement('ul'); //Creates ul element
 
     for (var i = 0; i < word.length; i++) {
-      correct.setAttribute('id', 'my-word'); //Give ul id="my-word"
+      correct.setAttribute('id', 'chosen-word'); //Give ul id="chosen-word"
       guess = document.createElement('li'); //Create li element
       guess.setAttribute('class', 'guess'); //Give li id="guess"
       if (word[i] === "-") {
@@ -108,7 +108,7 @@ window.onload = function () { //Will run once window is loaded
   }
 
 
-  // OnClick Function
+  // OnClick Function || Player-Guess
    buttonClick = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);
@@ -117,7 +117,7 @@ window.onload = function () { //Will run once window is loaded
       for (var i = 0; i < word.length; i++) {
         if (word[i] === geuss) {
           geusses[i].innerHTML = geuss;
-          counter += 1;
+          counter += 1; //counter = counter + 1
         }
       }
       var j = (word.indexOf(geuss));
@@ -152,15 +152,16 @@ window.onload = function () { //Will run once window is loaded
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)]; //Choose random word from chosenCategory array
     word = word.replace(/\s/g, " ");
     console.log(word);
-    buttons();
+    //buttons();
 
-    geusses = [ ];
-    lives = 10;
-    counter = 0;
-    space = 0;
-    result();
-    comments();
-    selectCat();
+    geusses = [ ]; //Empty guesses array
+    lives = 10; //Set lives = 10
+    counter = 0; //Set counter to 0
+    space = 0; //Set word space to 0
+    chosenWord(); //Call result of chosen word function
+    comments(); //Call win/lose/half-lives function
+    selectCat(); //Call select category function
+    buttons(); //Call alphabet buttons function
   }
 
   play();
