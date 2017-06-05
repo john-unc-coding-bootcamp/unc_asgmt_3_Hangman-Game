@@ -2,21 +2,21 @@ window.onload = function () { //Will run once window is loaded
 
   //Globals
 
+  //var numbers = [1,2,3.....]
+
   //Array of letters in the alphabet-these will be the button options for players to guess from
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm',
+                  'n', 'o', 'p', 'q', 'r', 's','t', 'u', 'v', 'w', 'x', 'y', 'z'];
 
   var categories;         // Arrays of categories to choose from
   var chosenCategory;     // Selected catagory
-  var word ;              // Slected random word from chosenCategories
+  var word ;              // Selected random word from chosenCategories
   var guess ;             // Geuss
   var geusses = [ ];      // Empty array to store player geusses
   var lives ;             // Lives
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
 
-  // Get elements
   //var showLives = document.getElementById("player-lives");
   var showCatagory = document.getElementById("scatagory");
 
