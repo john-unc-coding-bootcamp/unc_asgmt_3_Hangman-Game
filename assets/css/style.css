@@ -1,10 +1,12 @@
 body {
-  background: white;
-  color: black;
+  background: black;
+  color: yellow;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 18px;
   height: 100%;
   text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -16,7 +18,7 @@ li {
   letter-spacing: 15px;
 }
 
-h1, h2, h3 {
+h1 {
   font-weight: 100;
   text-transform: uppercase;
   text-align: center;
@@ -33,7 +35,33 @@ p {
   clear: both;
 }
 
+
+#alphabet {
+  margin: 15px auto;
+  padding: 0;
+  max-width: 960px;
+  clear: both;
+}
+
+#alphabet li {
+  padding-top: 10px;
+  padding-left: 10px;
+  margin: 10px;
+  list-style: none;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  border: solid 1px yellow;
+}
+
 #chosen-word {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+#chosen-word li {
+  position: relative;
+  margin: 0;
   padding: 0;
 }
