@@ -44,6 +44,8 @@ p {
 }
 
 #alphabet li {
+  background: yellow;
+  color: black;
   padding-top: 10px;
   padding-left: 10px;
   margin: 10px;
@@ -52,6 +54,18 @@ p {
   height: 30px;
   cursor: pointer;
   border: solid 1px yellow;
+  border-radius: 5px;
+}
+
+#alphabet li:hover {
+  background: black;
+  color: yellow;
+  border: solid 1px yellow;
+}
+
+#hold {
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 #chosen-word {
@@ -64,4 +78,29 @@ p {
   position: relative;
   margin: 0;
   padding: 0;
+}
+
+#player-lives {
+  text-align: center;
+  display: inline-block;
+}
+
+.container {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+button {
+  font-size: 18px;
+  background: yellow;
+  color: black;
+  cursor: pointer;
+  border: solid 1px yellow;
+  border-radius: 5px;
+  outline: none;
+}
+
+button:hover {
+  background: black;
+  color: yellow;
 }

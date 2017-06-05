@@ -84,13 +84,13 @@ window.onload = function () { //Will run once window is loaded
      var loseQuotes = ["I Find Your Lack of Faith Disturbing", "Rebel Scum!", "A Jedi You are Not"]
      var loseComment = loseQuotes[Math.floor(Math.random() * loseQuotes.length)];
 
-     var halfQuotes = ["Do or Do Not. There is No Try", "Use the Force", "Patience Young Padawan", "Never Tell Me the Odds"]
+     var halfQuotes = ["Do or Do Not. There is No Try", "Use the Force", "Patience Young Padawan", "Never Tell Me the Odds", "That's Not How the Force Works"];
      var halfComment = halfQuotes[Math.floor(Math.random() * halfQuotes.length)];
 
 
      var showLives = document.getElementById("player-lives");
 
-    showLives.innerHTML = "You have " + lives + " lives";
+    showLives.innerHTML = "Lives: " + lives;
     //Lose
     if (lives === 0) {  //could also do (lives < 1)
       showLives.innerHTML = loseComment;
