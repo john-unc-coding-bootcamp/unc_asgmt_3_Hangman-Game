@@ -108,7 +108,7 @@ window.onload = function () { //Will run once window is loaded
   }
 
 
-  // OnClick Function || Player-Guess
+  // OnClick Function/Player-Guess
    buttonClick = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);

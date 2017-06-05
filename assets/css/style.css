@@ -1,8 +1,7 @@
 body {
   background: black;
   color: yellow;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 18px;
+  font-family: 'Exo', sans-serif;  font-size: 18px;
   height: 100%;
   text-align: center;
   -webkit-box-sizing: border-box;
@@ -19,7 +18,7 @@ li {
 }
 
 h1 {
-  font-weight: 100;
+  font-family: 'Exo', sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
@@ -37,6 +36,7 @@ p {
 
 
 #alphabet {
+  font-family: 'Exo', sans-serif;
   margin: 15px auto;
   padding: 0;
   max-width: 960px;
@@ -81,6 +81,7 @@ p {
 }
 
 #player-lives {
+  font-family: 'Exo', sans-serif;
   text-align: center;
   display: inline-block;
 }
@@ -91,6 +92,7 @@ p {
 }
 
 button {
+  font-family: 'Exo', sans-serif;
   font-size: 18px;
   background: yellow;
   color: black;
@@ -101,6 +103,7 @@ button {
 }
 
 button:hover {
+  font-family: 'Exo', sans-serif;
   background: black;
   color: yellow;
 }
