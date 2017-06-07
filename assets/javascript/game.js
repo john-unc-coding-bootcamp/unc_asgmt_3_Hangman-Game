@@ -12,7 +12,8 @@ window.onload = function () { //Will run once window is loaded
   var chosenCategory;     // Selected catagory
   var word ;              // Selected random word from chosenCategories
   var guess ;             // Geuss
-  var geusses = [ ];      // Empty array to store player geusses
+  // nitpick - no need for empty space in array here
+  var geusses = [];      // Empty array to store player geusses
   var lives ;             // Lives
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
@@ -34,7 +35,7 @@ window.onload = function () { //Will run once window is loaded
       list.setAttribute("id", "letter"); //Give li id="letter"
       //list.id = 'letter';
       list.innerHTML = alphabet[i]; //Enter letters of [alphabet] into HTML (li element created above)
-      buttonClick(); //Call buttonClick function ()
+      buttonClick(list); //Call buttonClick function ()
       gameButtons.appendChild(letters); //Put ul in parent div id="buttons"
       letters.appendChild(list); //Put li in parent div id="alphabet"
     }
@@ -42,6 +43,7 @@ window.onload = function () { //Will run once window is loaded
 
 
   //Catagories to select from-Game loop will select random word from array of categories
+  // cool feature!
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
       catagoryName.innerHTML = "Star Wars Locations";
@@ -81,9 +83,12 @@ window.onload = function () { //Will run once window is loaded
      var winQuotes = ["The Force is Strong With You!", "Impressive. Most Impressive. Obi-Wan has Taught You Well"];
      var winComment = winQuotes[Math.floor(Math.random() * winQuotes.length)];
 
+     // lmao at Rebel Scum :)
      var loseQuotes = ["I Find Your Lack of Faith Disturbing", "Rebel Scum!", "A Jedi You are Not"]
      var loseComment = loseQuotes[Math.floor(Math.random() * loseQuotes.length)];
 
+     // getting a message halfway through was really cool, but I did think I lost when I saw it!
+     // maybe still show the lives count (not code related, just a comment :) )
      var halfQuotes = ["Do or Do Not. There is No Try", "Use the Force", "Patience Young Padawan", "Never Tell Me the Odds", "That's Not How the Force Works"];
      var halfComment = halfQuotes[Math.floor(Math.random() * halfQuotes.length)];
 
@@ -109,7 +114,9 @@ window.onload = function () { //Will run once window is loaded
 
 
   // OnClick Function/Player-Guess
-   buttonClick = function () {
+  // I would have this function take list as an argument. This function could be used
+  // elsewhere and 'list' may not be defined.
+   buttonClick = function (list) {
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active"); //
@@ -120,14 +127,15 @@ window.onload = function () { //Will run once window is loaded
           counter += 1; //counter = counter + 1
         }
       }
+      // try to avoid single letter variables except in loops (i=0)
       var j = (word.indexOf(geuss));
       if (j === -1) {
         lives -= 1; //lives = lives - 1
-        comments();
 
-      } else {
-        comments();
       }
+      // since comments returned in the "if" and the "else" blocks, it will always return
+      // so we can just put it down here.
+      comments();
     }
   }
 
